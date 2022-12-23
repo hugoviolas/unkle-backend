@@ -1,0 +1,17 @@
+[
+  {
+    "description": "tout risque"
+  },
+  {
+    "description": "vol uniquement"
+  },
+  {
+    "description": "incendie uniquement"
+  },
+  {
+    "description": "cambriolé un vendredi"
+  },
+  {
+    "description": "week-end"
+  }
+]
