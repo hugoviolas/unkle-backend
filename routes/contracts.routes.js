@@ -6,8 +6,13 @@ const Contract = require("../models/Contract.model");
 const Option = require("./../models/Option.model");
 const User = require("./../models/User.model");
 
-router.get("/", isAuthenticated, isAdmin, (req, res, next) => {
-  res.status(200).json({ message: "Contracts" });
+router.get("/", isAuthenticated, isAdmin, async (req, res, next) => {
+  try {
+    const allContracts = await Contract.find();
+    res.status(200).json({ allContracts });
+  } catch (error) {
+    next(error);
+  }
 });
 
 router.get("/user", isAuthenticated, isLoggedIn, (req, res, next) => {
